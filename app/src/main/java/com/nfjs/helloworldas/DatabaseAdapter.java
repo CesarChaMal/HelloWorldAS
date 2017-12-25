@@ -51,7 +51,6 @@ public class DatabaseAdapter {
         cursor.close();
         return response;
     }
-
     public long insertName(String name) {
         if (name.length() == 0) {
             throw new IllegalArgumentException("Name must not be empty");

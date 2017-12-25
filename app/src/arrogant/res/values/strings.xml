@@ -2,7 +2,5 @@
 <resources>
     <string name="title_activity_welcome">His/Her Royal Highness</string>
     <string name="hello_world">Arrogant</string>
-    <string name="greeting">We condescend to acknoweldge your
-        presence, if just barely, %1$s.</string>
-
+    <string name="greeting">We condescend to acknoweldge your presence, if just barely, %1$s.</string>
 </resources>

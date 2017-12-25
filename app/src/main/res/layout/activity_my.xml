@@ -19,18 +19,22 @@
     <EditText
         android:id="@+id/edit_text"
         android:hint="@string/name_hint"
+        android:inputType="textCapWords"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/hello_button"
-        android:text="@string/hello_button_label"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="@string/hello_button_label"
+        android:textSize="20sp" />
 
     <Button
-        android:text="@string/hi_button_label"
-        android:onClick="sayHello"
+        android:id="@+id/hi_button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:onClick="sayHello"
+        android:text="@string/hi_button_label"
+        android:textSize="20sp" />
 </LinearLayout>

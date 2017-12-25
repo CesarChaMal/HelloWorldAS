@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello_world">Servil</string>
+    <string name="title_activity_welcome">tu humilde servidor</string>
+    <string name="greeting">O grandioso %1$s, por favor acepta este patetico saludo indigno de mi parte. Me denigro ante ti.</string>
+</resources>

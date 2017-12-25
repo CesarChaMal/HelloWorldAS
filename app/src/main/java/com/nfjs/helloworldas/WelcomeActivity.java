@@ -23,31 +23,34 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class WelcomeActivity extends Activity implements NameFragment.Rateable {
     public static final int NOTIFICATION_ID = 314159;
 
     private TextView greetingText;
     private ListView listView;
+
     private Map<String, Integer> ratings = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
+
         if (getActionBar() != null) {
             getActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
         String name = getIntent().getStringExtra("name");
-        greetingText = (TextView) findViewById(R.id.greeting_text);
+
+//        greetingText = (TextView) findViewById(R.id.greeting_text);
+        greetingText = findViewById(R.id.greeting_text);
         String format = getString(R.string.greeting);
         greetingText.setText(String.format(format, name));
         notifyUser(name);
 
-        listView = (ListView) findViewById(R.id.list_view);
+//        listView = (ListView) findViewById(R.id.list_view);
+        listView = findViewById(R.id.list_view);
         new DisplayNamesTask().execute(name);
-
     }
 
     private class DisplayNamesTask extends AsyncTask<String, Void, List<String>> {
@@ -77,14 +80,13 @@ public class WelcomeActivity extends Activity implements NameFragment.Rateable {
 
             listView.setAdapter(arrayAdapter);
 
+/*
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                   Log.d("TAG", "Item at " + position + " clicked");
                   String name = parent.getItemAtPosition(position).toString();
-                  greetingText.setText(
-                          String.format(getString(R.string.greeting),
-                                  name));
+                  greetingText.setText(String.format(getString(R.string.greeting), name));
 
                   DialogFragment fragment = new NameFragment();
                   Bundle arguments = new Bundle();
@@ -92,6 +94,19 @@ public class WelcomeActivity extends Activity implements NameFragment.Rateable {
                   fragment.setArguments(arguments);
                   fragment.show(getFragmentManager(), "Nothing");
                 }
+            });
+*/
+
+            listView.setOnItemClickListener((parent, view, position, id) -> {
+              Log.d("TAG", "Item at " + position + " clicked");
+              String name = parent.getItemAtPosition(position).toString();
+              greetingText.setText(String.format(getString(R.string.greeting), name));
+
+              DialogFragment fragment = new NameFragment();
+              Bundle arguments = new Bundle();
+              arguments.putString("name", name);
+              fragment.setArguments(arguments);
+              fragment.show(getFragmentManager(), "Nothing");
             });
         }
     }
@@ -178,3 +193,4 @@ public class WelcomeActivity extends Activity implements NameFragment.Rateable {
         return super.onOptionsItemSelected(item);
     }
 }
+

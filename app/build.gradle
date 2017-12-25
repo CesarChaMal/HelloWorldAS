@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.nfjs.helloworldas"
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
@@ -21,25 +21,40 @@ android {
     flavorDimensions('attitude')
 
     productFlavors {
-        arrogant {
-            dimension 'attitude'
-        }
-
         friendly {
             dimension 'attitude'
+            minSdkVersion 17
+            applicationId 'com.nfjs.helloworldas'
+            targetSdkVersion 27
+            versionCode 1
+            versionName '1.0'
         }
-
+        arrogant {
+            dimension 'attitude'
+            minSdkVersion 17
+            applicationId 'com.nfjs.helloworldas'
+            targetSdkVersion 27
+            versionCode 1
+            versionName '1.0'
+        }
         obsequious {
             dimension 'attitude'
+            minSdkVersion 17
+            applicationId 'com.nfjs.helloworldas'
+            targetSdkVersion 27
+            versionCode 1
+            versionName '1.0'
         }
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_activity_welcome">Su Majestad</string>
+    <string name="hello_world">Arrogante</string>
+    <string name="greeting">Condescendimos para reconocer su presencia, es apenas, %1$s.</string>
+</resources>

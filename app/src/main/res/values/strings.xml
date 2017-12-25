@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">HelloWorldAS</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -8,10 +7,9 @@
     <string name="hello_button_label">Say Hello</string>
     <string name="hi_button_label">Say Hi</string>
     <string name="title_activity_welcome">WelcomeActivity</string>
-    <string name="greeting">Hello, %1$s!</string>
+    <string name="greetingText">Hello, %1$s!</string>
     <string name="animal">Animal</string>
     <string name="alert_button_label">Yeah, I know</string>
     <string name="alert_title">This is an alert</string>
     <string name="toastFromNeutralButton">Seriously, I get it</string>
-
 </resources>
